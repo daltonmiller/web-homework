@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+import HeroSection from '../components/sections/HeroSection';
+import graphQL from '../components/graphs/GraphQL';
 
-export function Home () {
+export function Home() {
   return (
     <Fragment>
       {/* <Link to='/another'>Another route</Link> */}
-      <div>Ready, steady, go!</div>
+
+      <HeroSection />
     </Fragment>
-  )
+  );
 }
