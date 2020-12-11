@@ -1,25 +1,26 @@
+/* eslint-disable no-multiple-empty-lines */
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { css } from '@emotion/core'
-import { Home } from './home'
+import Dashboard from './pages/Dashboard'
+import AddUser from './pages/AddUser'
+import addMerchant from './pages/AddMerchant'
+import AddTransaction from './pages/AddTransaction'
+import EditTransaction from './pages/EditTransaction'
+import Header from './components/Layout/Header'
 
 function AppRouter () {
   return (
     <Router>
       <div css={layoutStyle}>
-        <nav css={navStyle}>
-          <ul >
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/another'>Another route</Link>
-            </li>
-          </ul>
-        </nav>
+        <Header />
         <div className='main-content' css={contentStyle}>
-          <Route component={Home} exact path='/' />
-          <Route component={() => (<div>Content for /another route</div>)} exact path='/another' />
+          <Route component={Dashboard} exact path='/' />
+          <Route component={AddUser} exact path='/addUser' />
+          <Route component={addMerchant} exact path='/addMerchant' />
+          <Route component={AddTransaction} exact path='/addTransaction' />
+          <Route component={EditTransaction} exact path='/UpdateTransaction/:transaction_id' />
+
         </div>
       </div>
     </Router>
@@ -33,21 +34,6 @@ const layoutStyle = css`
     grid-row-gap: 24px;
     padding: 8px;
 `
-
-const navStyle = css`
-  grid-row: 1;
-
-  & > ul {
-      display: flex;
-      flex-direction: row;
-      list-style-type: none;
-  }
-  
-  & > ul > li:not(:first-child) {
-    margin-left: 16px;
-  }
-`
-
 const contentStyle = css`
   grid-row: 2;
 `
