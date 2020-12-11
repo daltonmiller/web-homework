@@ -1,6 +1,6 @@
 # Setup
 
-1. Run MongoDB. - The DB is being seeded on the webapp post-install so make sure you run yarn in webapp `first`.
+1. Run MongoDB. - The DB is being seeded on the webapp post-install so make sure you run yarn in webapp `first` (it is looking for port 27017).
 (You can find docs for MongoDB [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/).)
 
 ## (Run yarn in webapp first so the seed files runs correctly)
